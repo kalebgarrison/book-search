@@ -3,9 +3,9 @@ import './App.css';
 import axios from "axios";
 import {BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { useEffect } from 'react';
-import Search from "./containers/Search/Search";
-import Saved from "./containers/Saved/Saved";
-import NoMatch from "./containers/NoMatch/NoMatch";
+import Search from "./containers/Search";
+import Saved from "./containers/Saved";
+import NoMatch from "./containers/NoMatch";
 
 function App() {
   useEffect(() => {
