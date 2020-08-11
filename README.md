@@ -16,9 +16,8 @@ Any feedback can be provided via email at [kalebgarrison@gmail.com](mailto:kaleb
 
 ## Installation
 
-1. Open the GitHub pages link. 
-2. From here you can view the populated list of users. 
-3. You can then search through the users by their first name as well as sort by clicking the name button.
+1. Open the Heroku link. 
+2. From here you can search for books on Google. 
 
 ## Usage 
 
