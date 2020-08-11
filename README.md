@@ -22,13 +22,9 @@ Any feedback can be provided via email at [kalebgarrison@gmail.com](mailto:kaleb
 
 ## Usage 
 
-[Deployed Site](https://kalebgarrison.github.io/gt-user-directory/)
+[Deployed Site](https://github.com/kalebgarrison/book-search)
 
-[GitHub Repo Site](https://github.com/kalebgarrison/gt-user-directory)
-
-![alt text](assets/images/userdirectory.png) 
-
-
+[GitHub Repo Site](https://pacific-forest-79027.herokuapp.com/)
 
 
 ## License
