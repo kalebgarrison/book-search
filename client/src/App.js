@@ -6,6 +6,7 @@ import { useEffect } from 'react';
 import Search from "./containers/Search";
 import Saved from "./containers/Saved";
 import NoMatch from "./containers/NoMatch";
+import Wrapper from './components/Wrapper';
 
 function App() {
   useEffect(() => {
@@ -24,11 +25,13 @@ function App() {
 
   return (
     <Router>
+      <Wrapper>
      <Switch>
        <Route exact path="/" component={Search} />
        <Route exact path="/books" component={Saved} />
        <Route component={NoMatch} />
      </Switch>
+     </Wrapper>
    </Router>
   );
 }

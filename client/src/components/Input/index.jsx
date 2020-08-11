@@ -9,12 +9,13 @@ function index(props) {
           <div className="input-group mb-3">
             <div className="input-group-prepend">
               <span className="input-group-text" id="inputGroup-sizing-default">
-                Default
+                Book Search
               </span>
             </div>
             <input
               onChange={props.handleInputChange}
               value={props.search}
+              name={props.name}
               type="text"
               className="form-control"
               aria-label="Sizing example input"
@@ -23,14 +24,16 @@ function index(props) {
           </div>
         </div>
         <div className="row">
+          < div className="col-sm-12">
           <button
             id="search"
             onClick={props.handleFormSubmit}
             type="button"
             className="btn btn-primary"
           >
-            Primary
+            Search
           </button>
+        </div>
         </div>
       </div>
     </div>

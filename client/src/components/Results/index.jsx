@@ -12,29 +12,20 @@ class index extends Component {
       .catch((err) => console.error(err));
   }
 
-  handleSave = (book) => {
-    if (
-      this.state.savedBooks &&
-      this.state.savedBooks.map((book) => book._id).includes(book._id)
-    ) {
-      API.deleteBook(book._id)
-        .then((deletedBook) =>
-          this.setState({
-            savedBooks: this.state.savedBooks.filter(
-              (book) => book._id !== deletedBook._id
-            ),
-          })
-        )
-        .catch((err) => console.error(err));
-    } else {
-      API.saveBook(book)
-        .then((savedBook) =>
-          this.setState({
-            savedBooks: this.state.savedBooks.concat([savedBook]),
-          })
-        )
-        .catch((err) => console.error(err));
-    }
+  //   This function should save the book in theory. However, I can not get it to work as I keep receiving a Type Error message and I do not have the time to debug due to Project 3
+  handleSave = (id) => {
+    const book = this.state.books.find((book) => book.id === id);
+    console.log(book);
+
+    API.saveBook({
+      googleId: book.id,
+      title: book.volumeInfo.title,
+      subtitle: book.volumeInfo.subtitle,
+      link: book.volumeInfo.infoLink,
+      authors: book.volumeInfo.authors,
+      description: book.volumeInfo.description,
+      image: book.volumeInfo.imageLinks.thumbnail,
+    }).then(() => this.getBooks());
   };
 
   render() {
@@ -68,16 +59,15 @@ class index extends Component {
                       >
                         View
                       </a>
-                      {/* <button
-                        onClick={() => this.handleSave(result)}
+                      {/* This should save the book on click but it does not due to a type error */}
+                      <button
+                        type="submit"
+                        id={result.id}
+                        onClick={() => this.handleBookSave(result.id)}
                         className="btn badge-pill btn-outline-warning mt-3 ml-3"
                       >
-                        {this.state.savedBooks
-                          .map((book) => book._id)
-                          .includes(result._id)
-                          ? "Unsave"
-                          : "Save"}
-                      </button> */}
+                        Save
+                      </button>
                     </div>
                   </div>
                 </div>

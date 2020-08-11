@@ -9,15 +9,15 @@ class Search extends Component {
   state = {
     value: "",
     books: [],
+    search: "",
   };
 
   componentDidMount() {
     this.bookSearch();
   }
 
-  bookSearch = (book) => {
-    console.log(book);
-    API.getBook(book)
+  bookSearch = (query) => {
+    API.getBook(query)
       .then((res) =>
         this.setState({
           books: res.data.items.map((data) => this.bookCard(data)),
@@ -50,14 +50,13 @@ class Search extends Component {
     this.bookSearch(this.state.search);
   };
 
-  
-
   render() {
     return (
       <div>
         <Navbar />
         <Banner />
         <Input
+          name="search"
           search={this.state.search}
           handleInputChange={this.handleInputChange}
           handleFormSubmit={this.handleFormSubmit}
